@@ -11,6 +11,7 @@ const ImgurUpload = () => {
 
 	const handleFileChange = (event) => {
 		setImage(event.target.files[0]); // Gem den valgte fil
+		const file = event.target.files[0];
 		if (file) {
 			setImage(file);
 			// Opret en forhåndsvisning af billedet
