@@ -1,8 +1,5 @@
 import "./App.css";
-// import { ImageUpload } from "./imageUpload";
-import { ImageUploadImgur } from "./uploadImagur";
-import ImgurUpload from "./uploadImagur2";
-// import ImgurUploader from "./imgur";
+import ImgurUpload from "./uploadImagur";
 
 const App = () => {
 	return (
