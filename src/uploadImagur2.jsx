@@ -5,11 +5,19 @@ const ImgurUpload = () => {
 	const [uploading, setUploading] = useState(false);
 	const [imageUrl, setImageUrl] = useState(null);
 	const [deleteHash, setDeleteHash] = useState(null);
+	const [preview, setPreview] = useState(null);
 
 	const CLIENT_ID = "0ffbf2acef40fde";
 
 	const handleFileChange = (event) => {
 		setImage(event.target.files[0]); // Gem den valgte fil
+		if (file) {
+			setImage(file);
+			// Opret en forhåndsvisning af billedet
+			const reader = new FileReader();
+			reader.onloadend = () => setPreview(reader.result);
+			reader.readAsDataURL(file);
+		}
 	};
 
 	const handleUpload = async () => {
@@ -60,6 +68,7 @@ const ImgurUpload = () => {
 		<div>
 			<h2>Upload billede til Imgur online</h2>
 			<input type='file' onChange={handleFileChange} />
+			{preview && <img src={preview} alt='Preview' className='mt-2 w-32 h-32 object-cover mx-auto' />}
 			<button onClick={handleUpload} disabled={uploading}>
 				{uploading ? "Uploader..." : "Upload"}
 			</button>
