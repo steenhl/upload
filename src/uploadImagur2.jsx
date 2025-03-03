@@ -58,7 +58,7 @@ const ImgurUpload = () => {
 
 	return (
 		<div>
-			<h2>Upload billede til Imgur</h2>
+			<h2>Upload billede til Imgur online</h2>
 			<input type='file' onChange={handleFileChange} />
 			<button onClick={handleUpload} disabled={uploading}>
 				{uploading ? "Uploader..." : "Upload"}
