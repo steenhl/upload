@@ -22,14 +22,6 @@ const ImgurUpload = () => {
 	};
 
 	const handleUpload = async () => {
-		const file = e.target.files[0];
-		if (file) {
-			setImage(file);
-			// Opret en forhåndsvisning af billedet
-			const reader = new FileReader();
-			reader.onloadend = () => setPreview(reader.result);
-			reader.readAsDataURL(file);
-		}
 		if (!image) {
 			alert("Vælg et billede først!");
 			return;

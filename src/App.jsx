@@ -8,9 +8,6 @@ const App = () => {
 	return (
 		<>
 			<h1>Imgur Test</h1>
-			{/* <ImageUpload /> */}
-			{/* <ImageUploadImgur /> */}
-			{/* <ImgurUploader /> */}
 			<ImgurUpload />
 		</>
 	);
